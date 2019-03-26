@@ -5,9 +5,9 @@
   <subtitle>花满楼</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://pgg666.org/"/>
   <updated>2019-01-17T13:29:12.458Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://pgg666.org/</id>
   
   <author>
     <name>pgg</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>伪协议</title>
-    <link href="http://yoursite.com/2019/01/17/php%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E7%AF%87%E4%B9%8B%E4%BC%AA%E5%8D%8F%E8%AE%AE/"/>
-    <id>http://yoursite.com/2019/01/17/php代码审计篇之伪协议/</id>
+    <link href="https://pgg666.org/2019/01/17/php%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E7%AF%87%E4%B9%8B%E4%BC%AA%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://pgg666.org/2019/01/17/php代码审计篇之伪协议/</id>
     <published>2019-01-16T16:00:00.000Z</published>
     <updated>2019-01-17T13:29:12.458Z</updated>
     
