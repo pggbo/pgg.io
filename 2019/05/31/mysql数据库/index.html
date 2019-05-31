@@ -1,0 +1,562 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="mysql数据库, pgg,信息安全，小白教程，情感博主">
+    <meta name="description" content="mysql数据库数据库简介：1. 什么是数据库：数据库就是将大量数据保存起来，通过计算机加工而成的可以高效访问的数据集合数据库是长期储存在计算机内，有组织的，可共享的数据集合。2.常见的数据库：①Oracle Database:甲骨文公司 ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>mysql数据库 | pgg学长</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">pgg学长</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        mysql数据库
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="post-info">
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2019-05-31
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="mysql数据库"><a href="#mysql数据库" class="headerlink" title="mysql数据库"></a>mysql数据库</h1><h4 id="数据库简介："><a href="#数据库简介：" class="headerlink" title="数据库简介："></a>数据库简介：</h4><h5 id="1-什么是数据库：数据库就是将大量数据保存起来，通过计算机加工而成的可以高效访问的数据集合"><a href="#1-什么是数据库：数据库就是将大量数据保存起来，通过计算机加工而成的可以高效访问的数据集合" class="headerlink" title="1. 什么是数据库：数据库就是将大量数据保存起来，通过计算机加工而成的可以高效访问的数据集合"></a>1. 什么是数据库：数据库就是将大量数据保存起来，通过计算机加工而成的可以高效访问的数据集合</h5><h5 id="数据库是长期储存在计算机内，有组织的，可共享的数据集合。"><a href="#数据库是长期储存在计算机内，有组织的，可共享的数据集合。" class="headerlink" title="数据库是长期储存在计算机内，有组织的，可共享的数据集合。"></a>数据库是长期储存在计算机内，有组织的，可共享的数据集合。</h5><h5 id="2-常见的数据库："><a href="#2-常见的数据库：" class="headerlink" title="2.常见的数据库："></a>2.常见的数据库：</h5><h5 id="①Oracle-Database-甲骨文公司-②SQL-Server-微软公司"><a href="#①Oracle-Database-甲骨文公司-②SQL-Server-微软公司" class="headerlink" title="①Oracle Database:甲骨文公司   ②SQL Server: 微软公司"></a>①Oracle Database:甲骨文公司   ②SQL Server: 微软公司</h5><h5 id="③DB2-IBM公司-④-PostgreSQL-开源⑤MySQL-开源"><a href="#③DB2-IBM公司-④-PostgreSQL-开源⑤MySQL-开源" class="headerlink" title="③DB2: IBM公司    ④ PostgreSQL: 开源⑤MySQL:开源"></a>③DB2: IBM公司    ④ PostgreSQL: 开源⑤MySQL:开源</h5><h3 id="数据库结构："><a href="#数据库结构：" class="headerlink" title="数据库结构："></a>数据库结构：</h3><p>​                 1.服务器：用于接收并处理其他程序发出的请求的程序（软件），或者是安装此类程序的设备（计算机）</p>
+<p>​        2. 客户端：向服务器发出请求的程序（软件），或者是安装此类程序的设备（计算机）。</p>
+<p>​        3. 表（table）:类似Excel, 由行和列组成的二维表。</p>
+<p>​        4. 字段：表的列（垂直方向）。</p>
+<p>​        5. 记录： 表的行（水平方向）。 【关系数据库必须以行为单位进行数据读写】</p>
+<p>​        6.单位格： 行列交汇处。【注意】与Excel不同，一个单位格只能输入一个数据。</p>
+<h3 id="sql语句种类："><a href="#sql语句种类：" class="headerlink" title="sql语句种类："></a>sql语句种类：</h3><p>​        <em>sql语句：</em>  <strong>用关键字，表名和列名等组成而成的一句语句。</strong></p>
+<p><strong>三种sql语句种类：</strong> </p>
+<p>​        （1）DDL(数据库语言)：创建，删除或修改数据库以及数据库中的表等对象</p>
+<p>​            1. create:创建数据库和表等对象</p>
+<p>​            2. drop: 删除数据库和表等对象</p>
+<p>​            3. alter: 修改数据库和表等对象</p>
+<p>​        （2）DML(数据库操作语言)：查询或修改表中的记录。</p>
+<p>​            1.select:查询表中的数据</p>
+<p>​            2.insert:向表中插入数据</p>
+<p>​            3. update: 修改表中的数据</p>
+<p>​            4. delete: 删除表中的数据  </p>
+<p>​        （3）DCL(数据控制语言)：确认或取消对数据库中的数据变更的执行操作，以及对用户</p>
+<p>​            操作数据库中的对象权限进行设定   </p>
+<h3 id="常用函数："><a href="#常用函数：" class="headerlink" title="常用函数："></a>常用函数：</h3><p>​        group_concat()  返回由属于一组的列值连接组合而成的结果</p>
+<p>​        ascll()    返回字符的ascll码值</p>
+<p>​        database()   返回当前数据库名</p>
+<p>​        user()或system_user()   返回当前登录用户名</p>
+<p>​        version()   返回mysql服务器的版本</p>
+<p>​        sleep()    休眠秒数</p>
+<h3 id="基本sql语法："><a href="#基本sql语法：" class="headerlink" title="基本sql语法："></a>基本sql语法：</h3><h5 id="创建数据库："><a href="#创建数据库：" class="headerlink" title="创建数据库："></a>创建数据库：</h5><p>​    create database zkaq charset=utf8;</p>
+<h5 id="创建表："><a href="#创建表：" class="headerlink" title="创建表："></a>创建表：</h5><p>​    create table pgg(username varchar(255) not null PRIMARY KEY) charset=utf8</p>
+<p>​    desc ***    查看表的详细内容</p>
+<p>​    删除表：</p>
+<p>​    drop table pgg;</p>
+<h5 id="表里添加字段："><a href="#表里添加字段：" class="headerlink" title="表里添加字段："></a>表里添加字段：</h5><p>​    alter table pgg add password varchar(255);</p>
+<h5 id="表里删除字段："><a href="#表里删除字段：" class="headerlink" title="表里删除字段："></a>表里删除字段：</h5><p>​    alter table pgg drop column password</p>
+<p>​    </p>
+<h5 id="往字段添加值："><a href="#往字段添加值：" class="headerlink" title="往字段添加值："></a>往字段添加值：</h5><p>​    insert into pgg values (‘admin’,’123456’);</p>
+<h5 id="查询表内容："><a href="#查询表内容：" class="headerlink" title="查询表内容："></a>查询表内容：</h5><p>​    select *from flag;</p>
+<h5 id="查询字段的内容："><a href="#查询字段的内容：" class="headerlink" title="查询字段的内容："></a>查询字段的内容：</h5><p>​    select username from flag;</p>
+<h5 id="查询字段内容-带条件："><a href="#查询字段内容-带条件：" class="headerlink" title="查询字段内容 带条件："></a>查询字段内容 带条件：</h5><p>​    select *from flag where username=’admin’;</p>
+<p>​    </p>
+<p>​    select *from flag order by 1;</p>
+<p>​    select *from flag limit 0,1;</p>
+<h5 id="修改字段内容："><a href="#修改字段内容：" class="headerlink" title="修改字段内容："></a>修改字段内容：</h5><p>​    update flag set username = ‘root’ where username = ‘admin123456’;</p>
+<h5 id="删除整条字段的内容："><a href="#删除整条字段的内容：" class="headerlink" title="删除整条字段的内容："></a>删除整条字段的内容：</h5><p>​    delete from pgg where username=’root’</p>
+<h5 id="删除一个字段"><a href="#删除一个字段" class="headerlink" title="删除一个字段"></a>删除一个字段</h5><p>​    alter table pgg drop column username</p>
+<h3 id="联合查询："><a href="#联合查询：" class="headerlink" title="联合查询："></a>联合查询：</h3><p>​    表的内容无重复：</p>
+<p>​    select <em>from flag union select</em>from admin;</p>
+<p>​    骚操作</p>
+<p>​    select *from flag where username=’admin’ union select 1,2,3 from admin;</p>
+<p>​    select *from flag where username=’admin’ union select 1,2,3 from admin limit 0,1;</p>
+<h3 id="连接查询："><a href="#连接查询：" class="headerlink" title="连接查询："></a>连接查询：</h3><p>例子：</p>
+<h5 id="a表-id-name-b表-id-job-parent-id"><a href="#a表-id-name-b表-id-job-parent-id" class="headerlink" title="a表   id  name       b表    id    job     parent_id"></a>a表   id  name       b表    id    job     parent_id</h5><h5 id="1-张三-1-23-1"><a href="#1-张三-1-23-1" class="headerlink" title="1  张三                   1    23           1"></a>1  张三                   1    23           1</h5><h5 id="2-李四-2-34-2"><a href="#2-李四-2-34-2" class="headerlink" title="2  李四                   2    34           2"></a>2  李四                   2    34           2</h5><h5 id="3-王五-3-34-4"><a href="#3-王五-3-34-4" class="headerlink" title="3   王五                  3     34           4"></a>3   王五                  3     34           4</h5><h5 id="1）内连接："><a href="#1）内连接：" class="headerlink" title="1）内连接："></a>1）内连接：</h5><p>select a.<em>,b.</em> from a inner join b on a.ids=b.parent_id结果是</p>
+<p>1   张三                1   23    1</p>
+<p>2   李四                2  34      2</p>
+<h5 id="2）左连接："><a href="#2）左连接：" class="headerlink" title="2）左连接："></a>2）左连接：</h5><p>select a.<em>,b.</em> from a left join b on a.id=b.parent_id结果是</p>
+<p>1  张三      1   23   1</p>
+<p>2   李四    2   34    2</p>
+<p>3   王五    null   null  null</p>
+<h5 id="3-右连接："><a href="#3-右连接：" class="headerlink" title="3) 右连接："></a>3) 右连接：</h5><p>select a.<em>,b.</em> from a right join b on a.id=b.parent_id结果是</p>
+<p>1   张三        1        23    1</p>
+<p>2   李四        2        34    2</p>
+<p>​    null   null      3        34    4</p>
+<h3 id="子查询："><a href="#子查询：" class="headerlink" title="子查询："></a>子查询：</h3><h5 id="关键字："><a href="#关键字：" class="headerlink" title="关键字："></a>关键字：</h5><p>any 对于子查询返回的列中的任何一个数值，如果比较结果为true，就返回true</p>
+<p>in  效果等同于any</p>
+<p>all 效果与any相反，比较结果必须全部为false  </p>
+<p>some some是any的别名，用的比较少</p>
+<p>exlsts  子查询是否有结果，若返回0行则表示false,否则为true</p>
+<h5 id="标量子查询（返回一个结果）："><a href="#标量子查询（返回一个结果）：" class="headerlink" title="标量子查询（返回一个结果）："></a>标量子查询（返回一个结果）：</h5><p>select*from 表1 where 表1.id=(select id from 表2 where 条件 limit 0,1 )</p>
+<p>列子查询（指子查询返回的结果集是N行一列）：</p>
+<p>select *from 表1 where 表1.id in (select id from 表2 where 条件)</p>
+<p>行子查询（指子查询返回的结果集是一行 N列）：</p>
+<p>select *from 表1 where (列1，列2)=（select 列1，列2 from 表2 where 条件 limit 0,1）</p>
+<p>表子查询（指子查询返回的结果集是N行N列的一个表数据）：</p>
+<p>select*from 表1 where (列1，列2) in (select 列1，列2 from 表2 where 条件)</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/ddac.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/abcd.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://pgg666.org" class="b-link-green">pgg学长</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/05/31/mysql数据库/" class="b-link-green">mysql数据库</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2019/05/31/一次系统的渗透/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="一次系统的内网渗透测试">
+                        
+                        <span class="card-title">一次系统的内网渗透测试</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">#一次系统的渗透测试​            所需工具    ：     虚拟机开：一台kail,一台windows sever 2008 ,一台win7
+大致过程 ：首先用2008开一个web服务器，我们本地浏览，并上传木马，然后用木马反</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            pgg
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2019/05/31/sql注入入门基本语法/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="sql注入入门基本语法">
+                        
+                        <span class="card-title">sql注入入门基本语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">sql注入入门基本语法：今日，天下英雄齐聚在此，还有不少是我pgg昔日的好友，你们每次看到我都夸我帅是什么意思。有没有听过一句话“一生二，二生三，三生万物”sql注入里 今天我讲的就是这个一。########################</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            pgg
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+</body>
+</html>
